@@ -20,3 +20,6 @@ pids
 .npm
 *.tgz
 .cache
+
+# Database
+data/

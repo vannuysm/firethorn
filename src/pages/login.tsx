@@ -15,7 +15,7 @@ export default class LoginComponent extends React.Component {
     login = async (): Promise<void> => {
         const { username, password } = this.state;
 
-        const response = await fetch('https://hawthorn.nishtahir.com/login', {
+        const response = await fetch('http://localhost:4000/auth/login', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

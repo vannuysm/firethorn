@@ -8,3 +8,17 @@ services:
     volumes:
       - ./src:/app
       - /app/node_modules
+  hawthorn:
+    image: "nishtahir/hawthorn:latest"
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./data:/data
+      - ./config:/config
+    environment:
+      - DATABASE_URL=/data/production-db.sqlite
+      - ROCKET_ENV=development
+      - ROCKET_LOG=debug
+      - ROCKET_ADDRESS=0.0.0.0
+      - ROCKET_PORT=4000
+      - LOG_CONFIG_PATH=/config/log.yml

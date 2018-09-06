@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   firethorn:
     build: .
@@ -8,15 +9,18 @@ services:
     volumes:
       - ./src:/app
       - /app/node_modules
+    environment:
+      - NODE_ENV=development
   hawthorn:
     image: "nishtahir/hawthorn:latest"
-    ports:
-      - "4000:4000"
+    expose:
+      - 4000
     volumes:
       - ./data:/data
       - ./config:/config
     environment:
       - DATABASE_URL=/data/production-db.sqlite
+      - AUTH_SECRET=SecretSecretsAreNoFun
       - ROCKET_ENV=development
       - ROCKET_LOG=debug
       - ROCKET_ADDRESS=0.0.0.0

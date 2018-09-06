@@ -1,2 +1,22 @@
 node_modules/
+
+# Next.js build output
 .next/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Cache data
+.npm
+*.tgz
+.cache

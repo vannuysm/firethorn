@@ -1,0 +1,28 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "semicolon": {
+            "options": "always"
+        },
+        "quotemark": {
+            "options": [
+                "single",
+                "jsx-double"
+            ]
+        },
+        "variable-name": {
+            "options": "allow-leading-underscore"
+        },
+        "no-console": {
+            "severity": "warning"
+        },
+        "max-line-length": false,
+        "object-literal-sort-keys": false,
+        "member-access": false
+    },
+    "rulesDirectory": []
+}

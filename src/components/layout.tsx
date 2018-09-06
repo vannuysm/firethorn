@@ -1,7 +1,7 @@
-import 'semantic-ui-css/semantic.min.css';
 import React from 'react';
+import 'semantic-ui-css/semantic.min.css';
 
-export default class Layout extends React.Component {
+export default class LayoutComponent extends React.Component {
     render() {
         return (
             <div>

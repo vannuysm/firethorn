@@ -2,16 +2,12 @@ import React, { SyntheticEvent } from 'react';
 import { Button, Form, InputOnChangeData } from 'semantic-ui-react';
 import Layout from '../components/layout';
 
-interface LoginState {
-    username: string,
-    password: string
-}
-
 export default class LoginComponent extends React.Component {
-    state: LoginState = {
+    public state: LoginState = {
         username: '',
-        password: ''
-    }
+        password: '',
+    };
+
     login = async (): Promise<void> => {
         const { username, password } = this.state;
 
@@ -19,18 +15,20 @@ export default class LoginComponent extends React.Component {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({ username, password }),
         });
 
         console.log('response status', response.status);
         console.log('response status text', response.statusText);
         console.log('response body', response.json());
     }
-    updateField = (e: SyntheticEvent, { name, value }: InputOnChangeData): void => {
-        this.setState({ [name]: value })
+
+    updateField = (_e: SyntheticEvent, { name, value }: InputOnChangeData): void => {
+        this.setState({ [name]: value });
     }
+
     render() {
         const { username, password } = this.state;
 

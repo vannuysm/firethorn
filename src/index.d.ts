@@ -1,6 +1,4 @@
-declare namespace firethorn {
-    interface LoginState {
-        username: string,
-        password: string,
-    }
+declare type LoginState = {
+    username: string,
+    password: string,
 }
